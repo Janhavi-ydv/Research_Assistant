@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Research Assistant</title>
+    <link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h2>Research Assistant</h2>
+            <button class="theme-toggle" id="themeToggle">🌙</button>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="summarize">Summarize</button>
+            <button class="tab-btn" data-tab="notes">Notes</button>
+            <button class="tab-btn" data-tab="saved">Saved</button>
+        </div>
+
+        <!-- Tab Content -->
+        <div class="tab-content">
+            <!-- Summarize Tab -->
+            <div class="tab-pane active" id="summarize-tab">
+                <div class="info-box">
+                    <p>🔍 Select text on any webpage, then click the Summarize button below</p>
+                </div>
+                
+                <div class="action-buttons">
+                    <button id="summarizeBtn" class="btn-primary">
+                        <span class="btn-icon">📝</span> Summarize Selected Text
+                    </button>
+                </div>
+                
+                <div class="results-container">
+                    <h3>Summary</h3>
+                    <div id="results" class="results">
+                        <div class="placeholder">Your summary will appear here...</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Notes Tab -->
+            <div class="tab-pane" id="notes-tab">
+                <div class="input-group">
+                    <label for="notes">Your Notes:</label>
+                    <textarea id="notes" placeholder="Write your notes here..." rows="8"></textarea>
+                </div>
+                <div class="action-buttons">
+                    <button id="saveNotesBtn" class="btn-success">
+                        <span class="btn-icon">💾</span> Save Note
+                    </button>
+                    <button id="clearNotesBtn" class="btn-secondary">
+                        <span class="btn-icon">🗑️</span> Clear
+                    </button>
+                </div>
+            </div>
+
+            <!-- Saved Tab -->
+            <div class="tab-pane" id="saved-tab">
+                <div class="saved-header">
+                    <h3>Saved Notes</h3>
+                    <button id="refreshNotesBtn" class="btn-secondary small">
+                        <span class="btn-icon">🔄</span> Refresh
+                    </button>
+                </div>
+                <div id="allNotesList" class="notes-list">
+                    <div class="placeholder">No saved notes yet...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Toast Notification -->
+        <div id="toast" class="toast"></div>
+    </div>
+
+    <script src="sidepanel.js"></script>
+</body>
+</html>
